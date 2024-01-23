@@ -31,7 +31,7 @@ public class dropdown {
 		//Add label to frame
 		frm.add(lbl4);
 		//Create array of strings 
-		String[] menuItems = {"Make Backlink", "AnubhavSite", "youtube", "CloseAll"};
+		String[] menuItems = {"Make Backlink", "AnubhavSite", "youtube", "vpn"};
 		final JComboBox<String> combobox = new JComboBox<String>(menuItems); 
 		frm.add(combobox);     
 		//Create a new panel
@@ -104,6 +104,14 @@ public class dropdown {
 						e1.printStackTrace();
 					}
 			          break;
+			      case "vpn":
+			          // Action for Option 3
+			    	  try {
+			        	  backlinkbot.vpnrun();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 			  }
 }
 		});

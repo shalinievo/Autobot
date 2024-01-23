@@ -19,12 +19,12 @@ public class anubhavsite {
 			
 			try {
 				for (int i = 0; i <= 6; i++) {
-					ArrayList<String> readfileallurl = readfile.readsiteurl();
-			        ThreadLocalRandom randurl = ThreadLocalRandom.current();
+					//ArrayList<String> readfileallurl = readfile.readsiteurl();
+			        //ThreadLocalRandom randurl = ThreadLocalRandom.current();
                   
-			        int randindex = randurl.nextInt(0, readfileallurl.size()-1);
-				    driver.get(readfileallurl.get(randindex));
-				    System.out.println(readfileallurl.get(randindex));
+			        //int randindex = randurl.nextInt(0, readfileallurl.size()-1);
+				    driver.get("https://www.anubhavtrainings.com/anubhav-training-forums/anubhav-forum/is-abap-mandatory-to-pursue-sap-hana");
+				   // System.out.println(readfileallurl.get(randindex));
 				    driver.manage().window().maximize();
 				    Thread.sleep(1000);
 
