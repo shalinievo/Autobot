@@ -1,4 +1,5 @@
 /Autobot/files/*
 /Autobot/.settings/*
 /Autobot/target/*
+/Autobot/target/**
 /Autobot/target/classes/*
