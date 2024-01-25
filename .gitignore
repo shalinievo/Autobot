@@ -1,5 +1,6 @@
-/Autobot/files/*
-/Autobot/.settings/*
-/Autobot/target/*
-/Autobot/target/**
-/Autobot/target/classes/*
+files/*
+.settings/*
+target/*
+target/**
+target/classes/*
+.project
