@@ -3,7 +3,7 @@ package Autobot;
 import java.io.IOException;
 
 public class taskkill {
-	@SuppressWarnings("deprecation")
+	//@SuppressWarnings("deprecation")
 	static void closeall() throws IOException
 	  {
 		

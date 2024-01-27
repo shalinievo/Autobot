@@ -160,6 +160,7 @@ public class readfile {
 	        // Display our result filename.
 	        try {
 	            File myObj1 = new File(fileformateYou);
+				System.out.println(myObj1);
 	        } catch (Exception e) {
 	            System.out.println("An error occurred.");
 	            
@@ -181,6 +182,7 @@ public class readfile {
 	        // Display our result filename.
 	        try {
 	            File myObj1 = new File(fileformateSite);
+				System.out.println(myObj1);
 	        } catch (Exception e) {
 	            System.out.println("An error occurred.");
 	            
@@ -201,6 +203,7 @@ public class readfile {
 	        // Display our result filename.
 	        try {
 	            File myObj1 = new File(fileformateSite);
+				System.out.println(myObj1);
 	        } catch (Exception e) {
 	            System.out.println("An error occurred.");
 	            
@@ -213,6 +216,7 @@ public class readfile {
 			BufferedReader br = new BufferedReader(new FileReader(currentDirectory + "\\files\\domains.txt"));
 			  try {
 			      StringBuilder sb = new StringBuilder();
+				  System.out.println(sb);
 			      String line = br.readLine();
 			      ArrayList<String> domain = new ArrayList<String>();
 			      while (line != null) {
@@ -231,6 +235,7 @@ public class readfile {
 			BufferedReader br = new BufferedReader(new FileReader(currentDirectory + "\\files\\ABAP on HANA.txt"));
 			  try {
 			      StringBuilder sb = new StringBuilder();
+				  System.out.println(sb);
 			      String line = br.readLine();
 			      ArrayList<String> domain = new ArrayList<String>();
 			      while (line != null) {

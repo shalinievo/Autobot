@@ -7,7 +7,7 @@ import java.io.IOException;
 public class dropdown {
 	public static String currentDirectory=System.getProperty("user.dir");
 	public static String browserName;
-	static void menu(String[] args) throws IOException {
+	void menu(String[] args) throws IOException {
 		//Create a JFrame Object
 		JFrame frm = new JFrame();
 		//Create label object and set the position 
@@ -31,7 +31,7 @@ public class dropdown {
 		//Add label to frame
 		frm.add(lbl4);
 		//Create array of strings 
-		String[] menuItems = {"Make Backlink", "AnubhavSite", "youtube", "vpn"};
+		String[] menuItems = {"Make Backlink", "AnubhavSite", "youtube", "Runvpn", "Closevpn"};
 		final JComboBox<String> combobox = new JComboBox<String>(menuItems); 
 		frm.add(combobox);     
 		//Create a new panel
@@ -91,7 +91,6 @@ public class dropdown {
 			          try {
 			        	  backlinkbot.AnubhavSite(browserName);
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 			          break;
@@ -100,18 +99,24 @@ public class dropdown {
 			    	  try {
 			        	  backlinkbot.youtube(browserName);
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 			          break;
-			      case "vpn":
+			      case "Runvpn":
 			          // Action for Option 3
 			    	  try {
 			        	  backlinkbot.vpnrun();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
+					break;
+					case "Closevpn":
+						// Action for Option 3
+						try {
+							backlinkbot.Closevpn();
+					  } catch (IOException e1) {
+						  e1.printStackTrace();
+					  }
 			  }
 }
 		});

@@ -6,8 +6,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -86,49 +84,43 @@ public class backlinkbot {
 			  } catch(Exception e) {
 				  System.out.println("site3");
 			  }
-			try {
-				String myText = allText;
-				  myText = myText.replace("\n", Keys.chord(Keys.SHIFT, Keys.ENTER));	
-				  ((JavascriptExecutor) driver).executeScript("window.open('http://pingfarm.com/')");
-				  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-				  Set<String> parent=driver.getWindowHandles();
-				  Object[] child=parent.toArray();
-				  driver.switchTo().window((String) child[3]);
-			      WebElement ele21, ele31;
-			      ele21= driver.findElement(By.xpath("//textarea[@name='urls']"));
-			      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     ele21);
-			      ele21.click();
-			      ele21.sendKeys( myText);
-			      ele31= driver.findElement(By.xpath("//input[@type='submit']"));
-			      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     ele31);
-			      ele31.click();
+			  try {
+				ArrayList<String> readfilealldata = readfile.getAllSites();
+				ThreadLocalRandom random = ThreadLocalRandom.current();
+				int rand = random.nextInt(0, readfilealldata.size()-1);
+				((JavascriptExecutor) driver).executeScript("window.open('https://www.pingmylinks.com/addurl/')");
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+				Set<String> parent=driver.getWindowHandles();
+				Object[] child=parent.toArray();
+				driver.switchTo().window((String) child[3]);
+				WebElement elet1, elt31;
+				elet1= driver.findElement(By.xpath("//input[@name='furl']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elet1);
+				elet1.click();
+				elet1.sendKeys(readfilealldata.get(rand));
+				elt31= driver.findElement(By.xpath("//input[@onclick='fAjaxReg();this.blur();']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elt31);
+				elt31.click();
 			  } catch(Exception e) {
 				  System.out.println("site4");
 			  }
 			
-			try {
-				  ArrayList<String> readfilealldata = readfile.getAllSites();
-			      ThreadLocalRandom random = ThreadLocalRandom.current();
-
-			      int rand = random.nextInt(0, readfilealldata.size()-1);
-			      ((JavascriptExecutor) driver).executeScript("window.open('http://pingomatic.com/')");
-			      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-				  Set<String> parent=driver.getWindowHandles();
-				  Object[] child=parent.toArray();
-				  driver.switchTo().window((String) child[4]);
-				  WebElement elementpt, elementpt1, elementpt2;
-				  elementpt = driver.findElement(By.xpath("//input[@id='title']"));
-				  elementpt.clear();
-				  elementpt.click();
-				  elementpt.sendKeys(readfilealldata.get(rand));
-				  elementpt1 = driver.findElement(By.xpath("//input[@id='blogurl']"));
-				  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     elementpt1);
-				  elementpt1.clear();
-				  elementpt1.click();
-				  elementpt1.sendKeys(readfilealldata.get(rand));
-				  elementpt2= driver.findElement(By.xpath("//a[@class='bigbutton']"));
-				  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     elementpt2);
-				  elementpt2.click();
+			  try {
+				String myText = allText;
+				myText = myText.replace("\n", Keys.chord(Keys.SHIFT, Keys.ENTER));	
+				((JavascriptExecutor) driver).executeScript("window.open('http://www.indexkings.com/')");
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+				Set<String> parent=driver.getWindowHandles();
+				Object[] child=parent.toArray();
+				driver.switchTo().window((String) child[4]);
+				WebElement ele21, ele31;
+				ele21= driver.findElement(By.xpath("//textarea[@name='urls']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   ele21);
+				ele21.click();
+				ele21.sendKeys( myText);
+				ele31= driver.findElement(By.xpath("//input[@value='RAPID INDEX!']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   ele31);
+				ele31.click();
 				     
 			  } catch(Exception e) {
 				  System.out.println("site5");
@@ -177,37 +169,22 @@ public class backlinkbot {
 			  } catch(Exception e) {
 				  System.out.println("site7");
 			  } 
-			try {
-			    ArrayList<String> readfilealldata = readfile.getAllSites();
-		        ThreadLocalRandom random = ThreadLocalRandom.current();
-		        int rand = random.nextInt(0, readfilealldata.size()-1);
-			    ArrayList<String> readfilealldata1 = readfile.readMail();
-		        ThreadLocalRandom random1 = ThreadLocalRandom.current();
-		        int rand1 = random1.nextInt(0, readfilealldata1.size()-1);
-		        System.out.println(rand1);
-		        ((JavascriptExecutor) driver).executeScript("window.open('https://www.addme.com/submission/free-submission-start.php')");
-		        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			    Set<String> parent=driver.getWindowHandles();
-			    Object[] child=parent.toArray();
-			    driver.switchTo().window((String) child[7]);
-			  	WebElement elementpt, elementpt1, elementpt2, elementpt3;
-			  	elementpt = driver.findElement(By.xpath("//input[@id='url']"));
-			    elementpt.click();
-			    elementpt.sendKeys(readfilealldata.get(rand));
-			    System.out.println(readfilealldata.get(rand));
-			    elementpt1 = driver.findElement(By.xpath("//input[@id='email']"));
-			    elementpt1.click();
-			    elementpt1.sendKeys(readfilealldata1.get(rand1));
-			    elementpt2 = driver.findElement(By.xpath("//input[@id='fname']"));
-			    elementpt2.click();
-			    ArrayList<String> readName = readfile.getName();
-			    ThreadLocalRandom randomName = ThreadLocalRandom.current();
-			    int randname = randomName.nextInt(0, readName.size()-1);
-			    elementpt2.sendKeys(readName.get(randname));
-			    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			    elementpt3 = driver.findElement(By.xpath("//input[@type='Submit']"));
-			    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     elementpt3);
-			    elementpt3.click();
+			  try {
+				  String myText = allText;
+				  myText = myText.replace("\n", Keys.chord(Keys.SHIFT, Keys.ENTER));	
+				  ((JavascriptExecutor) driver).executeScript("window.open('http://pingfarm.com/')");
+				  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+				  Set<String> parent=driver.getWindowHandles();
+				  Object[] child=parent.toArray();
+				  driver.switchTo().window((String) child[7]);
+			      WebElement ele21, ele31;
+			      ele21= driver.findElement(By.xpath("//textarea[@name='urls']"));
+			      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     ele21);
+			      ele21.click();
+			      ele21.sendKeys( myText);
+			      ele31= driver.findElement(By.xpath("//input[@type='submit']"));
+			      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     ele31);
+			      ele31.click();
 			  } catch(Exception e) {
 				  System.out.println("site8");
 			  }
@@ -280,22 +257,22 @@ public class backlinkbot {
 				  System.out.println("site11");
 			  }
 			  try {
-				  ArrayList<String> readfilealldata = readfile.getAllSites();
-			      ThreadLocalRandom random = ThreadLocalRandom.current();
-			      int rand = random.nextInt(0, readfilealldata.size()-1);
-				  ((JavascriptExecutor) driver).executeScript("window.open('https://www.pingmylinks.com/addurl/')");
-				  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-				  Set<String> parent=driver.getWindowHandles();
-				  Object[] child=parent.toArray();
-				  driver.switchTo().window((String) child[1]);
-			      WebElement elet1, elt31;
-			      elet1= driver.findElement(By.xpath("//input[@name='furl']"));
-			      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elet1);
-			      elet1.click();
-			      elet1.sendKeys(readfilealldata.get(rand));
-			      elt31= driver.findElement(By.xpath("//input[@onclick='fAjaxReg();this.blur();']"));
-			      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elt31);
-			      elt31.click();
+				ArrayList<String> readfilealldata = readfile.getAllSites();
+				ThreadLocalRandom random = ThreadLocalRandom.current();
+				int rand = random.nextInt(0, readfilealldata.size()-1);
+				((JavascriptExecutor) driver).executeScript("window.open('https://www.pingmylinks.com/addurl/')");
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+				Set<String> parent=driver.getWindowHandles();
+				Object[] child=parent.toArray();
+				driver.switchTo().window((String) child[1]);
+				WebElement elet1, elt31;
+				elet1= driver.findElement(By.xpath("//input[@name='furl']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elet1);
+				elet1.click();
+				elet1.sendKeys(readfilealldata.get(rand));
+				elt31= driver.findElement(By.xpath("//input[@onclick='fAjaxReg();this.blur();']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elt31);
+				elt31.click();
 			  } catch(Exception e) {
 				  System.out.println("site12");
 			  }
@@ -422,22 +399,27 @@ public class backlinkbot {
 			  System.out.println("site18");
 		  }
 		  try {
-			  ArrayList<String> readfilealldata = readfile.getAllSites();
-		      ThreadLocalRandom random = ThreadLocalRandom.current();
-		      int rand = random.nextInt(0, readfilealldata.size()-1);
-			  ((JavascriptExecutor) driver).executeScript("window.open('http://pingsitemap.com/')");
-			  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			  Set<String> parent=driver.getWindowHandles();
-			  Object[] child=parent.toArray();
-			  driver.switchTo().window((String) child[8]);
-		      WebElement elet1, elt31;
-		      elet1= driver.findElement(By.xpath("//input[@class='textfield']"));
-		      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elet1);
-		      elet1.click();
-		      elet1.sendKeys(readfilealldata.get(rand));
-		      elt31= driver.findElement(By.xpath("//input[@type='submit']"));
-		      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elt31);
-		      elt31.click();
+			ArrayList<String> readfilealldata = readfile.getAllSites();
+			ThreadLocalRandom random = ThreadLocalRandom.current();
+			int rand = random.nextInt(0, readfilealldata.size()-1);
+			((JavascriptExecutor) driver).executeScript("window.open('http://seowagon.com/backlink-maker')");
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			Set<String> parent=driver.getWindowHandles();
+			Object[] child=parent.toArray();
+			driver.switchTo().window((String) child[8]);
+			WebElement elet1, elt31;
+			elet1= driver.findElement(By.xpath("//input[@id='myurl']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elet1);
+			elet1.click();
+			elet1.sendKeys(readfilealldata.get(rand));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			elt31= driver.findElement(By.xpath("//a[@class='btn btn-info']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elt31);
+			elt31.click();
+			elet1.sendKeys(readfilealldata.get(rand));
+			elt31= driver.findElement(By.xpath("//input[@type='submit']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",  elt31);
+			elt31.click();
 		  } catch(Exception e) {
 			  System.out.println("site19");
 		  }
@@ -548,23 +530,23 @@ public class backlinkbot {
 				  System.out.println("site24");
 			  }
 
-			try {
-				  ArrayList<String> readfilealldata = readfile.getAllSites();
-			      ThreadLocalRandom random = ThreadLocalRandom.current();
-			      int rand = random.nextInt(0, readfilealldata.size()-1);
-				  ((JavascriptExecutor) driver).executeScript("window.open('https://us.mysiteslink.com/index.php')");
-				  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-				  Set<String> parent=driver.getWindowHandles();
-				  Object[] child=parent.toArray();
-				  driver.switchTo().window((String) child[4]);
-			      WebElement elementpt11, elementpt2;
-			      elementpt11= driver.findElement(By.xpath("//input[@id='sn']"));
-			      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     elementpt11);
-			      elementpt11.click();
-			      elementpt11.sendKeys(readfilealldata.get(rand));
-			      elementpt2= driver.findElement(By.xpath("//input[@id='ss']"));
-			      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",     elementpt2);
-			      elementpt2.click();
+			  try {
+				ArrayList<String> readfilealldata = readfile.getAllSites();
+				ThreadLocalRandom random = ThreadLocalRandom.current();
+				int rand = random.nextInt(0, readfilealldata.size()-1);
+				((JavascriptExecutor) driver).executeScript("window.open('https://www.pingmylinks.com/addurl/')");
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+				Set<String> parent=driver.getWindowHandles();
+				Object[] child=parent.toArray();
+				driver.switchTo().window((String) child[4]);
+				WebElement elet1, elt31;
+				elet1= driver.findElement(By.xpath("//input[@name='furl']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elet1);
+				elet1.click();
+				elet1.sendKeys(readfilealldata.get(rand));
+				elt31= driver.findElement(By.xpath("//input[@onclick='fAjaxReg();this.blur();']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",   elt31);
+				elt31.click();
 			  } catch(Exception e) {
 				  System.out.println("site25");
 			  }
@@ -690,8 +672,7 @@ public class backlinkbot {
 			      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			      ele21= driver.findElement(By.xpath("//div[@class='ytp-ad-text ytp-ad-skip-button-text']"));
 			      ele21.click();
-			      
-				     
+     
 			  } catch(Exception e) {
 				  System.out.println("error in youtube playlist");
 			  }
@@ -724,22 +705,20 @@ public class backlinkbot {
 	        }
 	    }
 
-	   @SuppressWarnings("deprecation")
+	  // @SuppressWarnings("deprecation")
 	static void vpnrun() throws IOException
-		  {
-			
-			
-			try {
-				ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "runvpn.bat");
-				File dir = new File("C:\\Users\\shali\\OneDrive\\Desktop");
-				pb.directory(dir);
-				Process p = pb.start();
-				  } catch(Exception e) {
-					  System.out.println("error");
-				  }
-				  
-				
-		  }
+	{
+		try {
+			ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "runvpn.bat");
+			File dir = new File("C:\\Users\\shali\\OneDrive\\Desktop");
+			pb.directory(dir);
+			Process p = pb.start();
+			System.out.println(dir);
+			System.out.println(p);
+			} catch(Exception e) {
+				System.out.println("error");
+			}
+	}
 
 	static void youtubeComment(String browserName) throws IOException
 			  {
@@ -770,6 +749,19 @@ public class backlinkbot {
 					  System.out.println("site23");
 				  }
 				 
-			  } 
+			  }
+	static void Closevpn() throws IOException
+	{
+		try {
+			ProcessBuilder pb1 = new ProcessBuilder("cmd", "/c", "closevpn.bat");
+			File dir1 = new File(currentDirectory + "\\files");
+			pb1.directory(dir1);
+			Process p1 = pb1.start();
+			System.out.println(p1);
+		} catch(Exception e) 
+		{
+			System.out.println("Not close properly");
+		}
+	}
 
 }
