@@ -710,7 +710,7 @@ public class backlinkbot {
 	{
 		try {
 			ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "runvpn.bat");
-			File dir = new File("C:\\Users\\shali\\OneDrive\\Desktop");
+			File dir = new File(currentDirectory + "\\files");
 			pb.directory(dir);
 			Process p = pb.start();
 			System.out.println(dir);
